@@ -1,4 +1,4 @@
-# Ecommerce-API
+# Express js Starter-Js
 This is an Express js Starter project for building REST API in Javascript
 
 # Pre-requisites
