@@ -1,0 +1,35 @@
+{
+  "name": "express-js-starter-js",
+  "version": "1.0.0",
+  "description": "This is a custom made express-js starter with Javascript",
+  "main": "index.js",
+  "scripts": {
+    "start": "set NODE_ENV=production&&nodemon ./src/index.js",
+    "dev": "set NODE_ENV=development&&nodemon ./src/index.js",
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HilaryEmmanuel/Express-Starter-Js.git"
+  },
+  "author": "Emmanuel Hilary",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/HilaryEmmanuel/Express-Starter-Js/issues"
+  },
+  "homepage": "https://github.com/HilaryEmmanuel/Express-Starter-Js#readme",
+  "dependencies": {
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "helmet": "^7.1.0",
+    "jsonwebtoken": "^9.0.2"
+  },
+
+  "devDependencies":{
+    "mocha": "^10.2.0",
+    "nodemon": "^3.0.1",
+    "supertest": "^6.3.3"
+  }
+}
