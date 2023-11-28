@@ -20,7 +20,7 @@ app.use(cookieParser())
 app.use(helmet())
 
 app.get('/', (req, res)=>{
-    new Respond(res, 200, 'Express api is running....')
+    new Respond(res, 200, 'Express API is running....')
 
 })
 

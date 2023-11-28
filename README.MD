@@ -9,6 +9,10 @@ This is an Express js Starter project for building REST API in Javascript
 
   ` git clone <git+https://github.com/HilaryEmmanuel/Express-Starter-Js.git> `
 
+  - make a new directory and copy Express-Starter-Js to your directory
+  - windows💻
+     ` xcopy /E /I "Express-Starter-Js" "new directory" `
+
 - Install dependencies
   
   ` cd <Express-js Starter-Js> `
