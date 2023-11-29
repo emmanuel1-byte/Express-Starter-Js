@@ -1,42 +1,43 @@
 const http = require('http')
 const app = require('../src/app')
 
-//Create server 
 const server = http.createServer(app)
-const port = process.env.PORT || 5000
+const port = process.env.PORT || 3000
 app.set('port', port)
 
+
+
 //Check if port is already in use an if it is exit the process.
-function onError(error){
-switch(error.code){
-    case 'EADDRINUSE':
-      console.clear()
-      console.error('port ' + port + ' is already in use please switch to another port🙏😌')
-      process.exit(1)
+function onError(error) {
+    if(error.code ==='EADDRINUSE'){
+        console.clear()
+        console.error(` port ${port} is already in use please switch to another port🙏😌`)
+        process.exit(1)
+    }else{
+        console.error('An error occurrred: ', error)
+        process.exit(1)
+    }
 }
-}
+
 
 //Event Emmitter that listens to error Event
 server.on('error', onError)
 
 //Database connection
-async function databaseConnection(){
-    try{
-        //connection
+async function databaseConnection() {
+    try {
+       // connection
         console.log('Database connection was established succesfully')
-    }catch(err){
+    } catch (err) {
         console.log('Connection was not established an error occured', err)
-   }
+        process.exit(1)
+    }
 }
-
-databaseConnection()
 
 
 //Run the server
-server.listen(port, (()=>{
+server.listen(port, (() => {
     console.clear()
     console.log(`Express API is running on port ${port} 💪😁....`)
-})
- 
-
-)
+    //db connection
+}))
