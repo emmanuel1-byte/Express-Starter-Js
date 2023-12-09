@@ -2,7 +2,7 @@ const http = require('http')
 const app = require('../src/app')
 
 const server = http.createServer(app)
-const port = process.env.PORT || 3000
+const port = process.env.PORT || 9000
 app.set('port', port)
 
 
@@ -11,7 +11,7 @@ app.set('port', port)
 function onError(error) {
     if(error.code ==='EADDRINUSE'){
         console.clear()
-        console.error(` port ${port} is already in use please switch to another port🙏😌`)
+        console.error(` port ${port} is already`)
         process.exit(1)
     }else{
         console.error('An error occurrred: ', error)
@@ -38,6 +38,6 @@ async function databaseConnection() {
 //Run the server
 server.listen(port, (() => {
     console.clear()
-    console.log(`Express API is running on port ${port} 💪😁....`)
+    console.log(`Express API is running on port ${port}`)
     //db connection
 }))
