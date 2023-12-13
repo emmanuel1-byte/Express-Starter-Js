@@ -1,8 +1,8 @@
 var express = require('express')
-var { Respond } = require('./middlewares/respond')
 var cors = require('cors')
 var cookieParser = require('cookie-parser')
 var helmet = require('helmet')
+const { respond } = require('./utils/respond')
 require('dotenv').config()
 var app = express();
 
@@ -20,11 +20,11 @@ app.use(cookieParser())
 app.use(helmet())
 
 app.get('/', (req, res)=>{
-    new Respond(res, 200, 'Express API is running....')
+    respond(res, 200, 'Express API is running....')
 
 })
 
-app.use(function(err, req, res){
+app.use(function(err, req, res, next){
     res.locals.message = err.message
     res.locals.error = req.app.get('env') === 'development' ? err : {}
 
@@ -33,7 +33,7 @@ app.use(function(err, req, res){
 })
 
 app.get('*', (req, res)=>{
-    new Respond(res, 400, "Endpoint does not exist")
+    respond(res, 400, "Endpoint does not exist")
 })
 
 module.exports = app
